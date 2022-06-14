@@ -1,7 +1,7 @@
-# Python codes to compute autocorrelation functions (ACFs) of earthquake ground motions recorded by Distributed Acoustic sensing and detect soil non-linear behavior 
+# Python codes to compute autocorrelation functions (ACFs) of earthquake ground motions recorded by Distributed Acoustic Sensing (DAS) and detect soil non-linear behavior 
 
 The codes are for the following manuscript:
-- Viens L., L. F. Bonilla, Z. J. Spica, K. Nishida, T. Yamada, S. Shinohara (Submitted): pre-print link coming soon
+- Viens L., L. F. Bonilla, Z. J. Spica, K. Nishida, T. Yamada, S. Shinohara, Nonlinear earthquake response of marine sediments with distributed acoustic sensing (Submitted, pre-print link coming soon)
 
 ## Description:
 * The **Codes** folder contains:
