@@ -1,4 +1,4 @@
-# Python codes to compute autocorrelation functions (ACFs) of earthquake ground motions recorded by Distributed Acoustic Sensing (DAS) and detect soil non-linear behavior 
+# Python codes to detect soil non-linear behavior during earthquakes recorded by Distributed Acoustic Sensing (DAS) 
 
 The codes are for the following manuscript:
 - Viens L., L. F. Bonilla, Z. J. Spica, K. Nishida, T. Yamada, S. Shinohara, Nonlinear earthquake response of marine sediments with distributed acoustic sensing (Submitted, pre-print link coming soon)
@@ -12,9 +12,10 @@ The codes are for the following manuscript:
   - **Reproduce_Fig_4.py** to reproduce the Figure 4 of the paper ( ).
 
 * The **Data** folder contains:
-  - Five zip files with all the data needed to run the codes and reproduce the figures of the paper. The codes should unzip the zip files automatically.
+  - The data to reproduce Figures 2-4.
+  - The data to reproduce Figure 1cde (too big for github) need to be downloaded at: https://drive.google.com/file/d/13Lk2pSpx4m9JTnw6Am0lyL1xRaNfHypZ/view?usp=sharing
 
-* The **Figures** folder contains 5 figures that can be plotted with the 4 codes. 
+* The **Figures** folder contains 6 figures that can be plotted with the 4 codes. 
 
 
 ## Codes and their outputs:
