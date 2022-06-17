@@ -4,21 +4,24 @@
 Created on Fri Apr 29 20:49:04 2022
 
 @author: lviens
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ The data for this code are too big for Github and need to be downloaded from: https://drive.google.com/file/d/13Lk2pSpx4m9JTnw6Am0lyL1xRaNfHypZ/view?usp=sharing
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 """
 import numpy as np
-import scipy.signal, os
 import scipy.io as sio
+import scipy.signal, sys
+from os.path import exists
 import matplotlib.pyplot as plt
 from scipy.signal import butter, filtfilt
 
-def MakeDir(nameDir):
-    try:
-        os.makedirs(nameDir)
-    except:
-        pass
-
 
 def taper(x,p):
+    # Taper the data
     if p <= 0.0:
         return x
     else:
@@ -40,13 +43,13 @@ def taper(x,p):
 
 
 def butter_bandpass_filter(data, lowcut, highcut, fs, order=4):
+    # Bandpass filter 
     nyq = 0.5 * fs
     low = lowcut / nyq
     high = highcut / nyq
     b, a = butter(order, [low, high], btype='band')
     y = filtfilt(b, a, data)
     return y
-
 
 
 def next_power_of_2(n):
@@ -83,12 +86,16 @@ def apcc2(x1, dt, lag0, lagu):
     t   = np.arange(-tt, tt, dt)
     return t[(t >= lag0) & (t <= lagu)], pcc[(t >= lag0) & (t <= lagu)]
 
+#%% Check if the data have been downloaded 
 
+file_exists = exists('../Data/Data_Figure_1cde.mat')
+if not file_exists:
+    sys.exit('\n../Data/Data_Figure_1cde.mat is not found. \nDownload the data from: https://drive.google.com/file/d/13Lk2pSpx4m9JTnw6Am0lyL1xRaNfHypZ/view?usp=sharing')
 
 #%% Load data MV 2.5 earthquake
 # Info from Hi-net: 2019-11-28 23:17:32.83, lat: 39.168, lon: 142.565, Depth: 29.7, Magnitude 2.5V   
 
-file = sio.loadmat('../Data/Data_for_Fig_1.mat')
+file = sio.loadmat('../Data/Data_Figure_1cde.mat')
 Strain_data =  np.squeeze(file['Strain_data']) # Strain data (50 Hz sampling rate) 
 StrainRate_data_4000 =  np.squeeze(file['StrainRate_data_4000']) # Strain-rate data at channel 4000 (500 Hz sampling rate) 
 fs_strain = np.squeeze(file['fs_strain']) # Sampling rate of the strain data
@@ -99,43 +106,43 @@ Strain_filter = np.squeeze(file['filter']) # bandpass filter applied to the stra
 #%% Plot strain data
 fnt = 12
 xlim = [stations[0], stations[-1]]
-t1 =np.arange(0,len(Strain_data[0])/fs_strain ,1/fs_strain) + 4
+t1 = np.arange(0,len(Strain_data[0])/fs_strain ,1/fs_strain) + 4
 cl = 1.2*10**-9
 
 
-fig2= plt.figure(figsize =(10,9))
+fig2 = plt.figure(figsize =(10,9))
 
 ax2 = fig2.add_subplot(221)
 plt.imshow(Strain_data.T, aspect = 'auto',  clim = (-cl, cl), cmap = 'bone' , extent = ( xlim[0], xlim[-1], t1[-1], t1[0]  ))
 
-plt.title('$M_V$ 2.5 earthquake, Filter: ' +  str(Strain_filter[0]) + '-' + str(round(Strain_filter[1]) )+ ' Hz' ,fontsize=fnt)
+plt.title('$M_V$ 2.5 earthquake, Filter: ' +  str(Strain_filter[0]) + '-' + str(round(Strain_filter[1]) ) + ' Hz' , fontsize = fnt)
 
-plt.ylabel('Time (s)',fontsize=fnt)
-plt.xlabel('Channel #',fontsize=fnt)
-plt.xticks(fontsize=fnt )
-plt.yticks(fontsize=fnt )
+plt.ylabel('Time (s)', fontsize = fnt)
+plt.xlabel('Channel #', fontsize = fnt)
+plt.xticks(fontsize = fnt )
+plt.yticks(fontsize = fnt )
 ax2.tick_params( bottom=True, top=True, left=True, right=True)
 
-plt.ylim(40,4)
-plt.xlim(xlim[0],xlim[1]+1)
-plt.grid(linewidth =.5)
+plt.ylim(40, 4)
+plt.xlim(xlim[0], xlim[1]+1)
+plt.grid(linewidth = .5)
 
 
-plt.text(5500, 6, 'P-wave', weight='bold')
+plt.text(5500, 6, 'P-wave', weight = 'bold')
 plt.arrow(5700, 6.75 , 200, 1.4, shape = 'full')
 
-plt.text(5500, 17, 'S-wave',  weight='bold')
+plt.text(5500, 17, 'S-wave',  weight = 'bold')
 plt.arrow(5700, 15 , 200, -1.4, shape = 'full')
 
 plt.text(50, 4 , '(c)', fontsize = fnt)
 
 
 # Plot colorbar
-rect = plt.Rectangle( (7700, 29) ,  1300, 11, alpha = .75, facecolor = 'w', edgecolor = 'k',  zorder = 1 )
+rect = plt.Rectangle( (7700, 29),  1300, 11, alpha = .75, facecolor = 'w', edgecolor = 'k',  zorder = 1 )
 ax2.add_patch(rect)
 cbaxes = fig2.add_axes([0.86, 0.65, 0.1, 0.02])
-cb = plt.colorbar( cax = cbaxes,orientation = 'horizontal'  ) 
-cb.ax.set_title('Strain', fontsize=fnt) 
+cb = plt.colorbar( cax = cbaxes, orientation = 'horizontal'  ) 
+cb.ax.set_title('Strain', fontsize = fnt) 
 
 
 #%% Subplot Fig. 1(d)
@@ -167,7 +174,7 @@ plt.grid(linewidth = .5)
 ax3.tick_params(  bottom=True, top=True, left=True, right=True)
 ymax = np.max(abs(dataeq))+ np.max(abs(dataeq))*.1 +dz
 plt.ylim(-.15*10**-9, ymax -3*10**-10 )
-rect = plt.Rectangle( (t[argmaxtot]-5, -ymax ) ,  15, ymax*2, alpha = .25,facecolor = 'k' )
+rect = plt.Rectangle( (t[argmaxtot]-5, -ymax ) , 15, ymax*2, alpha = .25, facecolor = 'k' )
 ax3.add_patch(rect)
 plt.xticks(fontsize=fnt )
 plt.yticks(fontsize=fnt )
@@ -200,11 +207,11 @@ for fil in np.arange(len(f1)):
         plt.text(.39, tmp[int(.4*fs_strainRate_4000)] + dz2+.275*dzval2 , str(f1[fil]) + '-' + str(f1[fil]*2) + ' Hz' , ha='right')
     
     dz2+=dzval2
-plt.ylim(-1,16.5)
+plt.ylim(-1, 16.5)
 plt.text(-.05, dz2-dzval2*.3 , '(e)', fontsize = fnt)
-plt.xticks(fontsize=fnt )
-plt.yticks(fontsize=fnt )
-ax4.tick_params(  bottom=True, top=True, left=True, right=True)
+plt.xticks(fontsize = fnt )
+plt.yticks(fontsize = fnt )
+ax4.tick_params(bottom=True, top=True, left=True, right=True)
 plt.grid()    
 
 
