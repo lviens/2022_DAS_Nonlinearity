@@ -20,13 +20,13 @@ The codes are for the following manuscript:
 
 ## Codes and their outputs:
 
-* The **Reproduce_Fig_1cde.py** code reads the strain data for the MV 2.5 earthquake (Warning: the data were downsampled to 50 Hz for this example to reduce the size of the file. Fig. 1c is slightly different to that shown in the manucript as the bandpass filter applied to the data is 2-25 Hz, whereas it is 2-30 Hz in the manuscript). The strain-rate data at channel 4000 have a 500 Hz sampling rate and are used to compute the frequency dependent ACFs at this channel. 
+* The **Reproduce_Fig_1cde.py** code reads the strain data for the MV 2.5 earthquake (Warning: the data were downsampled to 50 Hz for this example to reduce the size of the file. Fig. 1c is slightly different to that shown in the manucript as the bandpass filter applied to the data is 2-25 Hz, whereas it is 2-30 Hz in the manuscript). The strain-rate data at channel 4000 have a 500 Hz sampling rate and are used to compute the frequency dependent ACFs at this channel. This code contains the function used to compute the ACFs.
 
 
-* The **Reproduce_Fig_2.py** code is used to plot the noise and earthquake ACFs along the 3 lines. The Figure below shows the ACFs along Line 1. 
+* The **Reproduce_Fig_2.py** code shows the ACFs at channels 5000 and 7000 in the 10-20 and 15-30 Hz frequency bands.
 
 
-* The **Reproduce_Fig_3.py** code compares the bedrock depths from the JIVSM, noise ACF, and earthquake ACF measurements. 
+* The **Reproduce_Fig_3.py** code shows the dv/v results at two stations for all the frequency bands and the dv/v results along the cable for two frequency bands. 
 
 
-* The **Reproduce_Fig_4.py** code shows a comparison of the Axitra ACF simulations with the observed earthquake and noise ACFs. 
+* The **Reproduce_Fig_4.py** code shows the dv/v measurements computed between weak and strong ground motions.
