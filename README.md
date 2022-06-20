@@ -23,17 +23,27 @@ The codes are for the following manuscript:
 
 * The **Reproduce_Fig_1cde.py** code reads the strain data of the MV 2.5 earthquake (Warning: the data were downsampled to 50 Hz for this example to reduce the size of the file. Fig. 1c is slightly different from that shown in the manucript as the bandpass filter applied to the data is 2-25 Hz, whereas it is 2-30 Hz in the manuscript). The strain-rate data at channel 4000 (Figure 1d) have a 500 Hz sampling rate and are used to compute the frequency dependent ACFs shown in Figue 1e. This code contains the function used to compute the ACFs using the phase correlation method in the frequency domain.
 
-![Figure 1](https://github.com/lviens/2022_DAS_Nonlinearity/blob/main/Figures/Fig_1cde.png)
-
+<p align="center">
+<img src="https://github.com/lviens/2022_DAS_Nonlinearity/blob/main/Figures/Fig_1cde.png" width=75%/>
+</p>
 
 * The **Reproduce_Fig_2.py** code shows the ACFs at channels 5000 and 7000 in the 10-20 and 15-30 Hz frequency bands.
-![Figure 2](https://github.com/lviens/2022_DAS_Nonlinearity/blob/main/Figures/Fig_2.png)
+<p align="center">
+<img src="https://github.com/lviens/2022_DAS_Nonlinearity/blob/main/Figures/Fig_2.png" width=75%/>
+</p>
 
 * The **Reproduce_Fig_3.py** code shows the dv/v results at two stations for all the frequency bands and the dv/v results along the cable for two frequency bands. 
-![Figure 3a-b](https://github.com/lviens/2022_DAS_Nonlinearity/blob/main/Figures/Fig_3ab.png)
-![Figure 3cd](https://github.com/lviens/2022_DAS_Nonlinearity/blob/main/Figures/Fig_3cd.png)
+<p align="center">
+<img src="https://github.com/lviens/2022_DAS_Nonlinearity/blob/main/Figures/Fig_3ab.png" width=75%/>
+</p>
+<p align="center">
+<img src="https://github.com/lviens/2022_DAS_Nonlinearity/blob/main/Figures/Fig_3cd.png" width=75%/>
+</p>
 
 * The **Reproduce_Fig_4.py** code shows the dv/v measurements computed between weak and strong ground motions.
-![Figure 4a](https://github.com/lviens/2022_DAS_Nonlinearity/blob/main/Figures/Fig_4a.png)
-![Figure 4b-g](https://github.com/lviens/2022_DAS_Nonlinearity/blob/main/Figures/Fig_4b-g.png)
-
+<p align="center">
+<img src="[https://github.com/lviens/2022_DAS_Nonlinearity/blob/main/Figures/Fig_2.png](https://github.com/lviens/2022_DAS_Nonlinearity/blob/main/Figures/Fig_4a.png)" width=75%/>
+</p>
+<p align="center">
+<img src="[https://github.com/lviens/2022_DAS_Nonlinearity/blob/main/Figures/Fig_2.png](https://github.com/lviens/2022_DAS_Nonlinearity/blob/main/Figures/Fig_4b-g.png)" width=75%/>
+</p>
