@@ -22,10 +22,11 @@ The codes are for the following manuscript:
 ## Codes and their outputs:
 
 * The **Reproduce_Fig_1cde.py** code reads the strain data of the MV 2.5 earthquake (Warning: the data were downsampled to 50 Hz for this example to reduce the size of the file. Fig. 1c is slightly different from that shown in the manucript as the bandpass filter applied to the data is 2-25 Hz, whereas it is 2-30 Hz in the manuscript). The strain-rate data at channel 4000 (Figure 1d) have a 500 Hz sampling rate and are used to compute the frequency dependent ACFs shown in Figue 1e. This code contains the function used to compute the ACFs using the phase correlation method in the frequency domain.
-
 <p align="center">
 <img src="https://github.com/lviens/2022_DAS_Nonlinearity/blob/main/Figures/Fig_1cde.png" width=75%/>
 </p>
+<br/>
+<br/>
 
 * The **Reproduce_Fig_2.py** code shows theACFs computed from the 103 earthquakes bandpass filtered between 10 and 20 Hz at channels (a) 5000 and (b) 7000. (c--d) Same as (a--b) for the data bandpass filtered between 15 and 30 Hz.  In (a--d), the ACFs are sorted by increasing dynamic peak strain values, which are computed after bandpass filtering the strain waveforms in their respective frequency bands. (e--f) Dynamic peak strains after bandpass filtering the earthquake waveforms between 10-20 Hz and 15-30 Hz at channels 5000 and 7000, respectively.
 <p align="center">
