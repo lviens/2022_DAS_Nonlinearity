@@ -12,7 +12,7 @@ The codes are for the following manuscript:
   - **Reproduce_Fig_4.py** to reproduce the Figure 4 of the paper.
 
 * The **Data** folder contains:
-* - The data to reproduce Figure 1cde are too big for github. They need to be downloaded [here](https://drive.google.com/file/d/13Lk2pSpx4m9JTnw6Am0lyL1xRaNfHypZ/view?usp=sharing) and moved to the **Data** folder
+* - The data to reproduce Figure 1cde are too big for github and are available [here](https://drive.google.com/file/d/13Lk2pSpx4m9JTnw6Am0lyL1xRaNfHypZ/view?usp=sharing). Note that they need to be moved to the **Data** folder before running the **Reproduce_Fig_1cde.py** code
   - The data to reproduce Figures 2-4.
   
 
