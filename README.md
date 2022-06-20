@@ -42,7 +42,7 @@ The codes are for the following manuscript:
 
 * The **Reproduce_Fig_4.py** code shows (a) the dv/v measurements computed between a reference ACF, which represents the soil linear response, and average ACF obtained from the earthquakes that generated the five largest peak strains, which captures the nonlinear behavior of sediments, at each channel and each frequency band. (b) Relative velocity changes as a functions of the filtered dynamic peak strain in the 2-4 Hz frequency bands. (c--d) Same as (b) for the 10-20 and 20-40 Hz frequency bands. (e) Relative velocity changes as a function of the average S-wave velocity within the first 30 m of the ground (VS30) for the 2-4 Hz frequency bands. (f--g) Same as (g) for the 10-20 and 20-40 Hz frequency bands. In (b--g), the color-bar corresponds to the channel number
 <p align="center">
-<img src="[https://github.com/lviens/2022_DAS_Nonlinearity/blob/main/Figures/Fig_2.png](https://github.com/lviens/2022_DAS_Nonlinearity/blob/main/Figures/Fig_4a.png)" width=75%/>
+<img src="https://github.com/lviens/2022_DAS_Nonlinearity/blob/main/Figures/Fig_4a.png" width=75%/>
 </p>
 <p align="center">
 <img src="https://github.com/lviens/2022_DAS_Nonlinearity/blob/main/Figures/Fig_4b-g.png" width=75%/>
