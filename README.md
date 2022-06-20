@@ -20,10 +20,6 @@ The codes are for the following manuscript:
 
 
 ## Codes and their outputs:
-\
-
-\
-
 
 * The **Reproduce_Fig_1cde.py** code reads the strain data of the MV 2.5 earthquake (Warning: the data were downsampled to 50 Hz for this example to reduce the size of the file. Fig. 1c is slightly different from that shown in the manucript as the bandpass filter applied to the data is 2-25 Hz, whereas it is 2-30 Hz in the manuscript). The strain-rate data at channel 4000 (Figure 1d) have a 500 Hz sampling rate and are used to compute the frequency dependent ACFs shown in Figue 1e. This code contains the function used to compute the ACFs using the phase correlation method in the frequency domain.
 
@@ -31,10 +27,12 @@ The codes are for the following manuscript:
 <img src="https://github.com/lviens/2022_DAS_Nonlinearity/blob/main/Figures/Fig_1cde.png" width=75%/>
 </p>
 
-* The **Reproduce_Fig_2.py** code shows theACFs computed from the 103 earthquakes bandpass filtered between 10 and 20 Hz at channels (a) 5000 and (b) 7000. (c--d) Same as (a--b) for the data bandpass filtered between 15 and 30 Hz.  In (a--d), the ACFs are sorted by increasing dynamic peak strain values, which are computed after bandpass filtering the strain waveforms in their respective frequency bands. (e--f) Dynamic peak strains after bandpass filtering the earthquake waveforms between 10-20 Hz and 15-30 Hz at channels 5000 and 7000, respectively. } 
+* The **Reproduce_Fig_2.py** code shows theACFs computed from the 103 earthquakes bandpass filtered between 10 and 20 Hz at channels (a) 5000 and (b) 7000. (c--d) Same as (a--b) for the data bandpass filtered between 15 and 30 Hz.  In (a--d), the ACFs are sorted by increasing dynamic peak strain values, which are computed after bandpass filtering the strain waveforms in their respective frequency bands. (e--f) Dynamic peak strains after bandpass filtering the earthquake waveforms between 10-20 Hz and 15-30 Hz at channels 5000 and 7000, respectively.
 <p align="center">
 <img src="https://github.com/lviens/2022_DAS_Nonlinearity/blob/main/Figures/Fig_2.png" width=75%/>
 </p>
+<br/>
+<br/>
 
 * The **Reproduce_Fig_3.py** code shows (a) the dv/v measurements between channels 5000 and 5010 for the 19 frequency bands and the 103 earthquakes. Dynamic peak strains are computed for each event and each station after bandpass filtering the strain data. The central frequency corresponds to the central frequency of the bandpass filter (e.g., 15 Hz for the 10-20 Hz bandpass filter). (b) Same as (a) between channels 7000 and 7010. (c) dv/v measurements from the ACFs computed from the 103 earthquakes bandpass filtered between 5 to 10 Hz between channels 500 and 9000 as a function of the dynamic peak strain. (d) Same as (c) for the 10-20 Hz frequency band. The dv/v color-scale shown in (b) is the same for all panels.
 <p align="center">
@@ -43,8 +41,10 @@ The codes are for the following manuscript:
 <p align="center">
 <img src="https://github.com/lviens/2022_DAS_Nonlinearity/blob/main/Figures/Fig_3cd.png" width=75%/>
 </p>
+<br/>
+<br/>
 
-* The **Reproduce_Fig_4.py** code shows (a) the dv/v measurements computed between a reference ACF, which represents the soil linear response, and average ACF obtained from the earthquakes that generated the five largest peak strains, which captures the nonlinear behavior of sediments, at each channel and each frequency band. (b) Relative velocity changes as a functions of the filtered dynamic peak strain in the 2-4 Hz frequency bands. (c--d) Same as (b) for the 10-20 and 20-40 Hz frequency bands. (e) Relative velocity changes as a function of the average S-wave velocity within the first 30 m of the ground (VS30) for the 2-4 Hz frequency bands. (f--g) Same as (g) for the 10-20 and 20-40 Hz frequency bands. In (b--g), the color-bar corresponds to the channel number
+* The **Reproduce_Fig_4.py** code shows (a) the dv/v measurements computed between a reference ACF, which represents the soil linear response, and average ACF obtained from the earthquakes that generated the five largest peak strains, which captures the nonlinear behavior of sediments, at each channel and each frequency band. (b) Relative velocity changes as a functions of the filtered dynamic peak strain in the 2-4 Hz frequency bands. (c--d) Same as (b) for the 10-20 and 20-40 Hz frequency bands. (e) Relative velocity changes as a function of the average S-wave velocity within the first 30 m of the ground (VS30) for the 2-4 Hz frequency bands. (f--g) Same as (g) for the 10-20 and 20-40 Hz frequency bands. In (b--g), the color-bar corresponds to the channel number.
 <p align="center">
 <img src="https://github.com/lviens/2022_DAS_Nonlinearity/blob/main/Figures/Fig_4a.png" width=75%/>
 </p>
