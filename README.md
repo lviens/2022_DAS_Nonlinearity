@@ -45,5 +45,5 @@ The codes are for the following manuscript:
 <img src="[https://github.com/lviens/2022_DAS_Nonlinearity/blob/main/Figures/Fig_2.png](https://github.com/lviens/2022_DAS_Nonlinearity/blob/main/Figures/Fig_4a.png)" width=75%/>
 </p>
 <p align="center">
-<img src="[https://github.com/lviens/2022_DAS_Nonlinearity/blob/main/Figures/Fig_2.png](https://github.com/lviens/2022_DAS_Nonlinearity/blob/main/Figures/Fig_4b-g.png)" width=75%/>
+<img src="https://github.com/lviens/2022_DAS_Nonlinearity/blob/main/Figures/Fig_4b-g.png" width=75%/>
 </p>
