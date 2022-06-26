@@ -1,7 +1,7 @@
 # Python codes to detect soil non-linear behavior during earthquakes recorded by Distributed Acoustic Sensing (DAS) 
 
 The codes are for the following manuscript:
-- Viens L., L. F. Bonilla, Z. J. Spica, K. Nishida, T. Yamada, S. Shinohara, Nonlinear earthquake response of marine sediments with distributed acoustic sensing (Submitted, pre-print link coming soon)
+- Viens L., L. F. Bonilla, Z. J. Spica, K. Nishida, T. Yamada, S. Shinohara, Nonlinear earthquake response of marine sediments with distributed acoustic sensing ([Preprint](https://doi.org/10.1002/essoar.10511693.1))
 
 ## Description:
 * The **Codes** folder contains:
