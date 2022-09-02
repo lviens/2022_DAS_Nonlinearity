@@ -6,7 +6,7 @@ The codes are for the following manuscript:
 ## Description:
 * The **Codes** folder contains:
 
-  - **Reproduce_Fig_1cde.py** to reproduce Figure 1cde of the paper (plot strain waveforms for Mv 2.5 earthquake, strain-rate data at station 4000, and compute ACFs)
+  - **Reproduce_Fig_1cde.py** to reproduce Figure 1cde of the paper (plot strain waveforms for Mv 2.5 earthquake, strain-rate data at station 5000, and compute ACFs)
   - **Reproduce_Fig_2.py** to reproduce Figure 2 (ACFs at two channels for two frequency bands)
   - **Reproduce_Fig_3.py** to reproduce Figure 3 of the paper
   - **Reproduce_Fig_4.py** to reproduce the Figure 4 of the paper.
