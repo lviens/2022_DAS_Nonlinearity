@@ -97,9 +97,9 @@ if not file_exists:
 
 file = sio.loadmat('../Data/Data_Figure_1cde.mat')
 Strain_data =  np.squeeze(file['Strain_data']) # Strain data (50 Hz sampling rate) 
-StrainRate_data_4000 =  np.squeeze(file['StrainRate_data_4000']) # Strain-rate data at channel 4000 (500 Hz sampling rate) 
+StrainRate_data_4000 =  np.squeeze(file['StrainRate_data_5000']) # Strain-rate data at channel 4000 (500 Hz sampling rate) 
 fs_strain = np.squeeze(file['fs_strain']) # Sampling rate of the strain data
-fs_strainRate_4000 = np.squeeze( file['fs_strainRate_4000'])# Sampling rate of the strain-rate data at channel 4000
+fs_strainRate_4000 = np.squeeze( file['fs_strainRate_5000'])# Sampling rate of the strain-rate data at channel 4000
 stations =  np.squeeze(file['stations']) # initial and last channel stations
 Strain_filter = np.squeeze(file['filter']) # bandpass filter applied to the strain data
  
@@ -146,7 +146,7 @@ cb.ax.set_title('Strain', fontsize = fnt)
 
 
 #%% Subplot Fig. 1(d)
-f1 = [2 ,4 ,6 ,8 ,10 , 12, 14 ] # filters applied to the data: 2 -> 2-4 Hz filter
+f1 = [ 4 ,6 ,8 ,10 , 12, 14 ] # filters applied to the data: 2 -> 2-4 Hz filter
 time_minus = 5
 time_tot = 15
 order = 4
@@ -159,7 +159,7 @@ argmaxtot = np.argmax(abs(tmp_strainRate))
 
 ax3 = plt.subplot(223)
 dz = 0
-dzval = 5*10**-10
+dzval = 7*10**-10
 
 for fil in np.arange(len(f1)):
     dataeq = butter_bandpass_filter(StrainRate_data_4000, lowcut=f1[fil], highcut=f1[fil]*2, fs = fs_strainRate_4000, order=order) # bandpass filter the strain-rate data
@@ -173,7 +173,8 @@ for fil in np.arange(len(f1)):
 plt.grid(linewidth = .5)
 ax3.tick_params(  bottom=True, top=True, left=True, right=True)
 ymax = np.max(abs(dataeq))+ np.max(abs(dataeq))*.1 +dz
-plt.ylim(-.15*10**-9, ymax -3*10**-10 )
+# plt.ylim(-.15*10**-9, ymax -3*10**-10 )
+plt.ylim(-.45*10**-9, ymax -5*10**-10 )
 rect = plt.Rectangle( (t[argmaxtot]-5, -ymax ) , 15, ymax*2, alpha = .25, facecolor = 'k' )
 ax3.add_patch(rect)
 plt.xticks(fontsize=fnt )
@@ -194,6 +195,7 @@ for fil in np.arange(len(f1)):
     filt_data = taper(filt_data,0.01)
     
     data = filt_data[argmaxtot - time_minus*fs_strainRate_4000: argmaxtot + (time_tot- time_minus)*fs_strainRate_4000]
+    data = np.sign(data)
     [tacf, tmp] = apcc2(data, 1/fs_strainRate_4000, lag0 = 0, lagu = dur_ACF)
     
     plt.plot(tacf, tmp+dz2,'k' ,linewidth = 3)
@@ -207,7 +209,7 @@ for fil in np.arange(len(f1)):
         plt.text(.39, tmp[int(.4*fs_strainRate_4000)] + dz2+.275*dzval2 , str(f1[fil]) + '-' + str(f1[fil]*2) + ' Hz' , ha='right')
     
     dz2+=dzval2
-plt.ylim(-1, 16.5)
+plt.ylim(-1.5,14)
 plt.text(-.05, dz2-dzval2*.3 , '(e)', fontsize = fnt)
 plt.xticks(fontsize = fnt )
 plt.yticks(fontsize = fnt )
