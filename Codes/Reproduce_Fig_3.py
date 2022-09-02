@@ -38,6 +38,7 @@ for station in  [5000, 7000] :
     plt.xticks(fontsize=fnt)
     plt.text(1.5*10**-10, 32.5  ,'(' + let[cp-1] + ')' , fontsize = fnt )
     plt.xlabel('Dynamic peak strain', fontsize=fnt )
+    plt.title('Channels: ' + str(station) + '-' + str(station+ len(dv)) )
     ax.set_xscale('log')
     if cp ==1:
         plt.ylabel('Central frequency (Hz)', fontsize=fnt)
