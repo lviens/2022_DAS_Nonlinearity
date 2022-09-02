@@ -21,7 +21,7 @@ The codes are for the following manuscript:
 
 ## Codes and their outputs:
 
-* The **Reproduce_Fig_1cde.py** code reads the strain data of the MV 2.5 earthquake (Warning: the data were downsampled to 50 Hz for this example to reduce the size of the file. Fig. 1c is slightly different from that shown in the manucript as the bandpass filter applied to the data is 2-25 Hz, whereas it is 2-30 Hz in the manuscript). The strain-rate data at channel 4000 (Figure 1d) have a 500 Hz sampling rate and are used to compute the frequency dependent ACFs shown in Figue 1e. This code contains the function used to compute the ACFs using the phase correlation method in the frequency domain.
+* The **Reproduce_Fig_1cde.py** code reads the strain data of the MV 2.5 earthquake (Warning: the data were downsampled to 50 Hz for this example to reduce the size of the file. Fig. 1c is slightly different from that shown in the manucript as the bandpass filter applied to the data is 2-25 Hz, whereas it is 2-30 Hz in the manuscript). The strain-rate data at channel 5000 (Figure 1d) have a 500 Hz sampling rate and are used to compute the frequency dependent ACFs shown in Figue 1e. This code contains the function used to compute the ACFs using the phase correlation method in the frequency domain.
 <p align="center">
 <img src="https://github.com/lviens/2022_DAS_Nonlinearity/blob/main/Figures/Fig_1cde.png" width=75%/>
 </p>
