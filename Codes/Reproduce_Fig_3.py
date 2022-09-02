@@ -18,7 +18,7 @@ fnt = 12
 fig = plt.figure(figsize= (10,3.5))
 
 cp = 1
-for station in  [ 5000, 7000] :
+for station in  [5000, 7000] :
     # Load data          
     file_in = '../Data/Data_Figure_3ab_channel_' + str(station)+ '-' + str(station +range_chan ) + '.mat'
     data_mat = sio.loadmat(file_in)
@@ -50,10 +50,12 @@ for station in  [ 5000, 7000] :
     
     cp+=1 
 plt.tight_layout()
-
+plt.show()
 fig.savefig('../Figures/Fig_3ab.png', dpi=400)
 
 #%% PLot Figure 3cd
+print(' ')
+print('Plotting Figures 3c-d, it might take a few minutes')
 
 cm = plt.cm.get_cmap('rainbow')
 
@@ -61,7 +63,7 @@ fnt = 11
 fig = plt.figure(figsize = (8,7))
 sta0 = 500
 cp =1
-for freq in  [4, 10] : 
+for freq in  [5, 10] : 
     file_in = '../Data/Data_Figure_3cd_Frequency_'+ str(freq)+ '-' + str(freq*2) +'.mat'
     data_mat = sio.loadmat(file_in)
     dv = np.squeeze(data_mat['dv'])
@@ -76,15 +78,16 @@ for freq in  [4, 10] :
     plt.ylabel('Dynamic peak strain', fontsize = fnt )
     
     if cp ==1:
-        plt.text(0,2* 10**-10, '(c)', fontsize = fnt)
+        plt.text(150, 8*10**-8, '(c)', fontsize = fnt)
     else:
         plt.xlabel('Channel #', fontsize = fnt)
-        plt.text(0, 2*10**-10, '(d)', fontsize = fnt)
-
+        plt.text(150, 8*10**-8, '(d)', fontsize = fnt)
+        
+    
     plt.grid(linewidth = .2)
     plt.title('Frequency band: ' +  str(freq) + '-' + str(freq*2) + ' Hz', fontsize = fnt)
     plt.xlim(500, 9000 )
-    plt.ylim( 1*10**-7, 2*10**-10 )
+    plt.ylim(1 * 10**-10,  9.9*10**-8 )
     plt.xticks(fontsize = fnt)
     plt.yticks(fontsize = fnt)
     cp+=1
@@ -101,5 +104,5 @@ ax1.set_position(pos)
 pos = [.09 , .07  ,  .85 , .405 ] 
 ax2.set_position(pos)
  
-fig.savefig('../Figures/Fig_3cd.png', dpi=400)
+fig.savefig('../Figures/Fig_3cd.png', dpi=150)
 
