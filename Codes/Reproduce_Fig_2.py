@@ -69,7 +69,7 @@ for f1 in filters :
             plt.text(-10, -0.01 , '(a)' , fontsize = fnt)
             rect = plt.Rectangle( (65, .135 ) ,  35, .2075, alpha = .5, facecolor = 'w', edgecolor = 'k',  zorder = 1 )
             ax1.add_patch(rect)
-            cbaxes = fig.add_axes([0.4, 0.635, 0.02, 0.07])
+            cbaxes = fig.add_axes([0.395, 0.635, 0.02, 0.07])
             cb = plt.colorbar( cax = cbaxes, orientation = 'vertical'  ) 
             cb.ax.set_title('    Clipped amp.', fontsize=fnt)
         elif cp ==2 : 
@@ -82,12 +82,12 @@ for f1 in filters :
 
         if cp == 1:
             ax5  = plt.subplot(3,2, 5)
-            plt.scatter(np.arange(len(PGSall)) , PGSall[sortpgs] , s = 100 , c = 'r', edgecolor = 'k' , label = str(f1) + '-' + str(f2) + 'Hz' )
+            plt.scatter(np.arange(len(PGSall)) , PGSall[sortpgs] , s = 100 , c = 'r', edgecolor = 'k' , label = str(f1) + '-' + str(f2) + ' Hz' )
             ax5.set_ylabel('Dynamic peak strain', fontsize=fnt)
         elif cp == 3:
-            ax5.scatter(np.arange(len(PGSall)) , PGSall[sortpgs] , s = 100 , c = 'b' , edgecolor = 'k', label = str(f1) + '-' + str(f2) + 'Hz' )
+            ax5.scatter(np.arange(len(PGSall)) , PGSall[sortpgs] , s = 100 , c = 'b' , edgecolor = 'k', label = str(f1) + '-' + str(f2) + ' Hz' )
             ax5.grid()
-            ax5.set_xlim(0,102)
+            ax5.set_xlim(0,104)
             ax5.set_ylim(1*10**-10, 5*10**-8)
             ax5.set_yscale('log')
             plt.setp(ax5.get_xticklabels(), fontsize=fnt )
@@ -96,11 +96,11 @@ for f1 in filters :
             ax5.tick_params(bottom=True, top=True, left=True, right=True)
         elif cp ==2:
             ax6  = plt.subplot(3,2, 6)
-            plt.scatter(np.arange(len(PGSall)) , PGSall[sortpgs] , s = 100 , c = 'r', edgecolor = 'k', label = str(f1) + '-' + str(f2) + 'Hz' )
+            plt.scatter(np.arange(len(PGSall)) , PGSall[sortpgs] , s = 100 , c = 'r', edgecolor = 'k', label = str(f1) + '-' + str(f2) + ' Hz' )
         elif cp == 4:
-            ax6.scatter(np.arange(len(PGSall)) , PGSall[sortpgs] , s = 100 , c = 'b' , edgecolor = 'k', label = str(f1) + '-' + str(f2) + 'Hz')
+            ax6.scatter(np.arange(len(PGSall)) , PGSall[sortpgs] , s = 100 , c = 'b' , edgecolor = 'k', label = str(f1) + '-' + str(f2) + ' Hz')
             ax6.grid()
-            ax6.set_xlim(0,102)
+            ax6.set_xlim(0,104)
             ax6.set_ylim(1*10**-10, 5*10**-8)
             ax6.set_yscale('log')
             ax6.tick_params(bottom=True, top=True, left=True, right=True, labelright = True, labelleft = False)
@@ -111,7 +111,7 @@ for f1 in filters :
         cp+=1
         
 ax6.set_xlabel('Earthquake number', fontsize =fnt )
-ax6.text(-5, 6* 10**-8 , '(f)' , fontsize = fnt)
+ax6.text(-1, 6* 10**-8 , '(f)' , fontsize = fnt)
 ax5.set_xlabel('Earthquake number', fontsize =fnt )
 ax5.text(-10, 6* 10**-8 , '(e)' , fontsize = fnt)
 
@@ -137,3 +137,4 @@ ax5.set_position(pos)
 pos = [.52 , .06  ,  .415 , .15 ] 
 ax6.set_position(pos)
 fig.savefig('../Figures/Fig_2.png', dpi=400)
+
